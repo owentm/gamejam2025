@@ -11,6 +11,8 @@ if (keyboard_check_pressed(ord("D"))) {
     move_y = -move_step;
 } else if (keyboard_check_pressed(ord("S"))) {
     move_y = move_step;
+} else if (keyboard_check_pressed(ord("Space"))) {
+    show_debug_message("ACTION!")
 }
 
 
@@ -54,6 +56,9 @@ if (box != noone) {
         
         // if so, we say it can't go, like a wall
         if (place_meeting(box_new_x, box_new_y, obj_box)) {
+            can_push = false;
+        }
+		else if (place_meeting(box_new_x, box_new_y, obj_exit)) {
             can_push = false;
         }
         
