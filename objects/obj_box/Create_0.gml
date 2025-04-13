@@ -1,0 +1,1 @@
+var sprite_timer = 0;
